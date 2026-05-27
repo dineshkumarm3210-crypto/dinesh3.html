@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* பொதுவான வடிவமைப்பு */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            padding-top: 70px; /* ஹெடருக்குக் கீழே இடம் விடுவதற்காக */
+        }
+
+        /* புதிய ஹெடர் வடிவமைப்பு */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00adb5;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00adb5;
+        }
+
+        /* ஹோம் ஸ்கிரீன் */
+        .home-section {
+            height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, #1e1e1e, #121212);
+            padding: 20px;
+        }
+
+        .home-section h1 {
+            font-size: 3rem;
+            color: #00adb5;
+            margin-bottom: 10px;
+        }
+
+        .home-section p {
+            font-size: 1.5rem;
+            color: #eee;
+            margin-bottom: 30px;
+        }
+
+        .scroll-btn {
+            background-color: #00adb5;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background-color: #007c82;
+        }
+
+        /* அபௌட் ஸ்கிரீன் */
+        .about-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #1a1a1a;
+            border-top: 2px solid #222;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: #00adb5;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-1.8;
+            color: #ccc;
+        }
+
+        /* ஃபூட்டர் மெசேஜ் பாக்ஸ் */
+        footer {
+            background-color: #111;
+            padding: 60px 20px;
+            border-top: 2px solid #00adb5;
+        }
+
+        .footer-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-container h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #00adb5;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: #222;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #00adb5;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #00adb5;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #007c82;
+        }
+
+        /* மொபைல் போன்களுக்கான பிரத்தியேக வடிவமைப்பு (Responsive) */
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            body {
+                padding-top: 100px;
+            }
+            .home-section {
+                height: calc(100vh - 100px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- புதிய ஹெடர் பகுதி (மேலே நிலையாக இருக்கும்) -->
+    <header>
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- 1. ஹோம் ஸ்கிரீன் -->
+    <section id="home" class="home-section">
+       <div class="home-content">
+        <h1>Hi,I am web designer</h1>
+        <p>I create beautiful  and morden websites</p>
+        <a href="#about" class="scroll-btn">Know more about me</a>
+       </div>
+       <div class="home page">
+          <img scr="myimage.jpeg" alt="My profile photo">
+    </section>
+        </div>
+      </section>
+    <!-- 2. அபௌட் ஸ்கிரீன் -->
+    <section id="about" class="about-section">
+        <h2>About me</h2>
+        <p>I love coding.My main goal is to create simple and very fast websites for users .</p>
+    </section>
+
+    <!-- 3. ஃபூட்டர் மெசேஜ் பாக்ஸ் -->
+    <footer id="contact">
+        <div class="footer-container">
+            <h3>Contact me</h3>
+            <form class="contact-form" action="dineshkumarm3210@gmail.com" method="post" enctype="text/plain">
+                <input type="email" name="Email" placeholder="Your email address..." required>
+                <textarea name="Message" rows="5" placeholder="Your message type here..." required></textarea>
+                <button type="submit" class="submit-btn">send message</button>
+            </form>
+        </div>
+    </footer>
+
+</body>
+</html>
