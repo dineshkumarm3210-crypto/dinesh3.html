@@ -1,271 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* பொதுவான வடிவமைப்பு */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
+    <!-- 4. Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project-card">
+                <h3>E-commerce Store</h3>
+                <p>Online shopping platform with product listings and cart functionality.</p>
+            </div>
+            <div class="project-card">
+                <h3>Blog Platform</h3>
+                <p>A simple blog system where users can post and comment.</p>
+            </div>
+        </div>
+    </section>
 
-        body {
-            background-color: #ffffff; /* வெள்ளை பின்புலம் */
-            color: #333333; /* அடர் சாம்பல் நிற எழுத்துக்கள் */
-            padding-top: 70px; /* ஹெடருக்காக மேலே இடம் */
-        }
-
-        /* ஹெடர் வடிவமைப்பு */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f8f9fa; /* லேசான சாம்பல் நிற ஹெடர் */
-            border-bottom: 2px solid #eeeeee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #00adb5;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: #333333;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #00adb5;
-        }
-
-        /* ஹோம் ஸ்கிரீன் வடிவமைப்பு */
-        .home-section {
-            height: calc(100vh - 70px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff; /* வெள்ளை பின்புலம் */
-            padding: 20px 80px;
-            gap: 40px;
-        }
-
-        .home-content {
-            flex: 1;
-            text-align: left;
-        }
-
-        .home-section h1 {
-            font-size: 3rem;
-            color: #00adb5;
-            margin-bottom: 15px;
-        }
-
-        .home-section p {
-            font-size: 1.5rem;
-            color: #555555;
-            margin-bottom: 35px;
-        }
-
-        .scroll-btn {
-            background-color: #00adb5;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .scroll-btn:hover {
-            background-color: #007c82;
-        }
-
-        .home-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .home-image img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%; /* வட்ட வடிவம் */
-            object-fit: cover;
-            border: 4px solid #00adb5; /* நீல பார்டர் */
-        }
-
-        /* அபௌட் ஸ்கிரீன் வடிவமைப்பு */
-        .about-section {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-            background-color: #ffffff; /* வெள்ளை பின்புலம் */
-            border-top: 2px solid #eeeeee;
-        }
-
-        .about-section h2 {
-            font-size: 2.5rem;
-            color: #00adb5;
-            margin-bottom: 20px;
-        }
-
-        .about-section p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            line-height: 1.8;
-            color: #666666;
-        }
-
-        /* ஃபூட்டர் மெசேஜ் பாக்ஸ் வடிவமைப்பு */
-        footer {
-            background-color: #f8f9fa;
-            padding: 60px 20px;
-            border-top: 2px solid #00adb5;
-        }
-
-        .footer-container {
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .footer-container h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #00adb5;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            background-color: #ffffff;
-            border: 1px solid #cccccc;
-            color: #333333;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #00adb5;
-            outline: none;
-        }
-
-        .submit-btn {
-            background-color: #00adb5;
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #007c82;
-        }
-
-        /* மொபைல் போன்களுக்கான வடிவமைப்பு */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 10px;
-            }
-            body {
-                padding-top: 100px;
-            }
-            .home-section {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 40px 20px;
-                height: auto;
-            }
-            .home-content {
-                text-align: center;
-            }
-            .home-image img {
-                width: 200px;
-                height: 200px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- ஹெடர் பகுதி (வலது பக்க மெனுவுடன்) -->
-    <header>
-        <div class="logo">Portfolio</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <!-- 5. Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2>My Skills</h2>
+        <ul class="skills-list">
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>UI/UX Design</li>
         </ul>
-    </header>
+    </section>
 
-    <!-- 1. ஹோம் ஸ்கிரீன் பகுதி -->
-    <section id="home" class="home-section">
-        <div class="home-content">
-            <h1>Hi, I am a Web Designer</h1>
-            <p>I create beautiful and modern websites</p>
-            <a href="#about" class="scroll-btn">Know More About Me</a>
+    <!-- 6. Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <h2>Testimonials</h2>
+        <div class="testimonial-card">
+            <p>"Dinesh is a talented web designer. His work is clean and professional!"</p>
+            <h4>- Client A</h4>
         </div>
-        <div class="home-image">
-            <!-- உங்கள் போட்டோவின் பெயரை கீழே உள்ள 'my-profile.jpg' என்ற இடத்திற்குப் பதில் மாற்றவும் -->
-            <img src="myimage.jpeg" alt="My Profile Photo">
+        <div class="testimonial-card">
+            <p>"He delivered our project on time with great attention to detail."</p>
+            <h4>- Client B</h4>
         </div>
     </section>
 
-    <!-- 2. அபௌட் ஸ்கிரீன் பகுதி -->
-    <section id="about" class="about-section">
-        <h2>About Me</h2>
-        <p>I love coding. My main goal is to create simple and very fast websites for users.</p>
-    </section>
-
-    <!-- 3. ஃபூட்டர் மெசேஜ் பாக்ஸ் பகுதி -->
-    <footer id="contact">
-        <div class="footer-container">
-            <h3>Contact Me</h3>
-            <!-- உங்கள் ஜிமெயில் ஐடியை கீழே மாற்றிக் கொள்ளலாம் -->
-            <form class="contact-form" action="mailto:dineshkumarm3210@gmail.com" method="post" enctype="text/plain">
-                <input type="email" name="Email" placeholder="Your email address..." required>
-                <textarea name="Message" rows="5" placeholder="Type your message here..." required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-    </footer>
-
-</body>
-</html>
