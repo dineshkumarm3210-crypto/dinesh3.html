@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +15,19 @@
         }
 
         body {
-            background-color: #ffffff;
-            color: #333333;
-            padding-top: 70px; /* ஹெடருக்குக் கீழே இடம் விடுவதற்காக */
+            background-color: #ffffff; /* வெள்ளை பின்புலம் */
+            color: #333333; /* அடர் சாம்பல் நிற எழுத்துக்கள் */
+            padding-top: 70px; /* ஹெடருக்காக மேலே இடம் */
         }
 
-        /* புதிய ஹெடர் வடிவமைப்பு */
+        /* ஹெடர் வடிவமைப்பு */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #1a1a1a;
-            border-bottom: 2px solid #222;
+            background-color: #f8f9fa; /* லேசான சாம்பல் நிற ஹெடர் */
+            border-bottom: 2px solid #eeeeee;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,7 +48,7 @@
         }
 
         .nav-links a {
-            color: #ffffff;
+            color: #333333;
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: 500;
@@ -59,28 +59,32 @@
             color: #00adb5;
         }
 
-        /* ஹோம் ஸ்கிரீன் */
+        /* ஹோம் ஸ்கிரீன் வடிவமைப்பு */
         .home-section {
             height: calc(100vh - 70px);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
-            background: linear-gradient(to bottom, #1e1e1e, #121212);
-            padding: 20px;
+            background-color: #ffffff; /* வெள்ளை பின்புலம் */
+            padding: 20px 80px;
+            gap: 40px;
+        }
+
+        .home-content {
+            flex: 1;
+            text-align: left;
         }
 
         .home-section h1 {
             font-size: 3rem;
             color: #00adb5;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .home-section p {
             font-size: 1.5rem;
-            color: #eee;
-            margin-bottom: 30px;
+            color: #555555;
+            margin-bottom: 35px;
         }
 
         .scroll-btn {
@@ -97,7 +101,21 @@
             background-color: #007c82;
         }
 
-        /* அபௌட் ஸ்கிரீன் */
+        .home-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .home-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%; /* வட்ட வடிவம் */
+            object-fit: cover;
+            border: 4px solid #00adb5; /* நீல பார்டர் */
+        }
+
+        /* அபௌட் ஸ்கிரீன் வடிவமைப்பு */
         .about-section {
             min-height: 80vh;
             display: flex;
@@ -106,7 +124,7 @@
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            background-color: #ffffff;
+            background-color: #ffffff; /* வெள்ளை பின்புலம் */
             border-top: 2px solid #eeeeee;
         }
 
@@ -119,13 +137,13 @@
         .about-section p {
             font-size: 1.2rem;
             max-width: 600px;
-            line-1.8;
-            color: #ccc;
+            line-height: 1.8;
+            color: #666666;
         }
 
-        /* ஃபூட்டர் மெசேஜ் பாக்ஸ் */
+        /* ஃபூட்டர் மெசேஜ் பாக்ஸ் வடிவமைப்பு */
         footer {
-            background-color: #111;
+            background-color: #f8f9fa;
             padding: 60px 20px;
             border-top: 2px solid #00adb5;
         }
@@ -151,9 +169,9 @@
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 15px;
-            background-color: #222;
-            border: 1px solid #444;
-            color: white;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            color: #333333;
             border-radius: 5px;
             font-size: 1rem;
         }
@@ -179,8 +197,8 @@
             background-color: #007c82;
         }
 
-        /* மொபைல் போன்களுக்கான பிரத்தியேக வடிவமைப்பு (Responsive) */
-        @media (max-width: 600px) {
+        /* மொபைல் போன்களுக்கான வடிவமைப்பு */
+        @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
                 flex-direction: column;
@@ -190,14 +208,24 @@
                 padding-top: 100px;
             }
             .home-section {
-                height: calc(100vh - 100px);
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 40px 20px;
+                height: auto;
+            }
+            .home-content {
+                text-align: center;
+            }
+            .home-image img {
+                width: 200px;
+                height: 200px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- புதிய ஹெடர் பகுதி (மேலே நிலையாக இருக்கும்) -->
+    <!-- ஹெடர் பகுதி (வலது பக்க மெனுவுடன்) -->
     <header>
         <div class="logo">Portfolio</div>
         <ul class="nav-links">
@@ -207,32 +235,34 @@
         </ul>
     </header>
 
-    <!-- 1. ஹோம் ஸ்கிரீன் -->
+    <!-- 1. ஹோம் ஸ்கிரீன் பகுதி -->
     <section id="home" class="home-section">
-       <div class="home-content">
-        <h1>Hi,I am web designer</h1>
-        <p>I create beautiful  and morden websites</p>
-        <a href="#about" class="scroll-btn">Know more about me</a>
-       </div>
-       <div class="home page">
-          <img scr="myimage.jpeg" alt="My profile photo">
-    </section>
+        <div class="home-content">
+            <h1>Hi, I am a Web Designer</h1>
+            <p>I create beautiful and modern websites</p>
+            <a href="#about" class="scroll-btn">Know More About Me</a>
         </div>
-      </section>
-    <!-- 2. அபௌட் ஸ்கிரீன் -->
-    <section id="about" class="about-section">
-        <h2>About me</h2>
-        <p>I love coding.My main goal is to create simple and very fast websites for users .</p>
+        <div class="home-image">
+            <!-- உங்கள் போட்டோவின் பெயரை கீழே உள்ள 'my-profile.jpg' என்ற இடத்திற்குப் பதில் மாற்றவும் -->
+            <img src="my-profile.jpg" alt="My Profile Photo">
+        </div>
     </section>
 
-    <!-- 3. ஃபூட்டர் மெசேஜ் பாக்ஸ் -->
+    <!-- 2. அபௌட் ஸ்கிரீன் பகுதி -->
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>I love coding. My main goal is to create simple and very fast websites for users.</p>
+    </section>
+
+    <!-- 3. ஃபூட்டர் மெசேஜ் பாக்ஸ் பகுதி -->
     <footer id="contact">
         <div class="footer-container">
-            <h3>Contact me</h3>
-            <form class="contact-form" action="dineshkumarm3210@gmail.com" method="post" enctype="text/plain">
+            <h3>Contact Me</h3>
+            <!-- உங்கள் ஜிமெயில் ஐடியை கீழே மாற்றிக் கொள்ளலாம் -->
+            <form class="contact-form" action="mailto:dineshkumarm3210@gmail.com" method="post" enctype="text/plain">
                 <input type="email" name="Email" placeholder="Your email address..." required>
-                <textarea name="Message" rows="5" placeholder="Your message type here..." required></textarea>
-                <button type="submit" class="submit-btn">send message</button>
+                <textarea name="Message" rows="5" placeholder="Type your message here..." required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </footer>
